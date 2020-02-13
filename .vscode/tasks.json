@@ -1,0 +1,36 @@
+{
+// 有关 tasks.json 格式的文档，请参见
+    // https://go.microsoft.com/fwlink/?LinkId=733558
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "gcc.exe build active file",
+            "command": "D:\\GCC\\x86_64-8.1.0-release-win32-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "E:\\vs_code\\for_c\\build_exe\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "D:\\GCC\\x86_64-8.1.0-release-win32-seh-rt_v6-rev0\\mingw64\\bin"
+            },
+            "problemMatcher":{
+                    "owner":"cpp",
+                    "fileLocation":["relative","{$workspaceFolder}"],
+                    "pattern":{
+                        "regexp": "^(.*):(\\d+):(\\d+):\\s+(warningerror):\\s+(.*)$",
+                        "file": 1,
+                        "line": 2,
+                        "column": 3,
+                        "severity": 4,
+                        "message":5,
+                    }
+
+
+                },   
+            "group": "build"
+        }
+    ]
+}
